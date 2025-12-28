@@ -19,12 +19,12 @@ La aplicación **no utiliza base de datos**, sino una lista en memoria, con el o
 ## Estructura del proyecto
 El proyecto está organizado siguiendo buenas prácticas:
 com.example.vuelos
-├── controllers → Endpoints REST
-├── services → Lógica de negocio y filtros
-├── repositories → Gestión de datos en memoria
-├── models → Entidad Vuelo
-├── dtos → Objetos de transferencia de datos
-├── utils → Utilidades (manejo de fechas)
+    controllers → Endpoints REST
+    services → Lógica de negocio y filtros
+    repositories → Gestión de datos en memoria
+    models → Entidad Vuelo
+    dtos → Objetos de transferencia de datos
+    utils → Utilidades (manejo de fechas)
 
 
 

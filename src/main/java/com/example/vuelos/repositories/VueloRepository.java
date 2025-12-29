@@ -67,7 +67,6 @@ public class VueloRepository {
                 LocalDate.of(2025, 12, 3),
                 LocalDate.of(2025, 12, 4)));
     }
-
     // Devuelve todos los vuelos
     public List<Vuelo> findAll() {
         return vuelos;

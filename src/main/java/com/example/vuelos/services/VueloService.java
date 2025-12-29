@@ -15,11 +15,11 @@ import java.util.stream.Collectors;
 @Service
 public class VueloService {
 
-    private final VueloRepository repository;
+    private final VueloRepository vueloRepository;
 
     // Inyección del repositorio
     public VueloService(VueloRepository repository) {
-        this.repository = repository;
+        this.vueloRepository = repository;
     }
 
     // Obtiene vuelos con filtros opcionales
@@ -28,7 +28,7 @@ public class VueloService {
             String lugarLlegada,
             LocalDate fechaSalida
     ) {
-        return repository.findAll().stream()
+        return vueloRepository.findAll().stream()
                 .filter(v -> empresa == null || v.getEmpresa().equalsIgnoreCase(empresa))
                 .filter(v -> lugarLlegada == null || v.getLugarLlegada().equalsIgnoreCase(lugarLlegada))
                 .filter(v -> fechaSalida == null || v.getFechaSalida().equals(fechaSalida))
@@ -36,6 +36,11 @@ public class VueloService {
                 .map(this::toDTO)
                 .collect(Collectors.toList());
     }
+
+    public Vuelo getById(int id) {
+        return vueloRepository.findById(id);
+    }
+
 
     // Convierte el modelo Vuelo en DTO
     private VueloResponseDTO toDTO(Vuelo vuelo) {

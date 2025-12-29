@@ -1,6 +1,7 @@
 package com.example.vuelos.controllers;
 
 import com.example.vuelos.dtos.VueloResponseDTO;
+import com.example.vuelos.models.Vuelo;
 import com.example.vuelos.services.VueloService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
@@ -13,11 +14,11 @@ import java.util.List;
 @RequestMapping("/vuelos")
 public class VueloController {
 
-    private final VueloService service;
+    private final VueloService vueloService;
 
     // Inyección del servicio
     public VueloController(VueloService service) {
-        this.service = service;
+        this.vueloService = service;
     }
 
     // Endpoint GET para obtener vuelos con filtros opcionales
@@ -29,7 +30,12 @@ public class VueloController {
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
             LocalDate fechaSalida
     ) {
-        return service.obtenerVuelos(empresa, lugarLlegada, fechaSalida);
+        return vueloService.obtenerVuelos(empresa, lugarLlegada, fechaSalida);
     }
+    @GetMapping("/{id}")
+    public Vuelo getVueloById(@PathVariable int id) {
+        return vueloService.getById(id);
+    }
+
 }
 

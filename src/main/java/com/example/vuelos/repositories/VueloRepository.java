@@ -89,6 +89,17 @@ public class VueloRepository {
     public void delete(int id) {
         vuelos.removeIf(v -> v.getId() == id);
     }
+
+    public void deleteById(int id) {
+        vuelos.removeIf(v -> v.getId() == id);
+    }
+
+    public Vuelo guardar(Vuelo vuelo) {
+        vuelos.add(vuelo);
+        return vuelo;
+    }
+
+
 }
 
 

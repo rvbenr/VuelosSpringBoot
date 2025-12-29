@@ -58,5 +58,43 @@ public class VueloService {
                 )
         );
     }
+    public void delete(int id) {
+        Vuelo existing = vueloRepository.findById(id);
+        if (existing == null) {
+            throw new RuntimeException("Vuelo no encontrado");
+        }
+        vueloRepository.deleteById(id);
+    }
+
+    public Vuelo update(int id, Vuelo vuelo) {
+        Vuelo existing = vueloRepository.findById(id);
+        if (existing == null) {
+            throw new RuntimeException("Vuelo no encontrado");
+        }
+
+        existing.setNombreVuelo(vuelo.getNombreVuelo());
+        existing.setEmpresa(vuelo.getEmpresa());
+        existing.setLugarSalida(vuelo.getLugarSalida());
+        existing.setLugarLlegada(vuelo.getLugarLlegada());
+        existing.setFechaSalida(vuelo.getFechaSalida());
+        existing.setFechaLlegada(vuelo.getFechaLlegada());
+
+        return existing;
+    }
+
+    public Vuelo create(Vuelo vuelo) {
+        // Validación básica
+        if (vuelo.getNombreVuelo() == null || vuelo.getEmpresa() == null
+                || vuelo.getLugarSalida() == null || vuelo.getLugarLlegada() == null
+                || vuelo.getFechaSalida() == null || vuelo.getFechaLlegada() == null
+                || vuelo.getFechaSalida().isAfter(vuelo.getFechaLlegada())) {
+            throw new IllegalArgumentException("Datos de vuelo inválidos");
+        }
+
+        return vueloRepository.guardar(vuelo);
+    }
+
+
+
 }
 

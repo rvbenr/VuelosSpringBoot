@@ -37,5 +37,21 @@ public class VueloController {
         return vueloService.getById(id);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteVuelo(@PathVariable int id) {
+        vueloService.delete(id);
+    }
+
+    @PutMapping("/{id}")
+    public Vuelo updateVuelo(@PathVariable int id, @RequestBody Vuelo vuelo) {
+        return vueloService.update(id, vuelo);
+    }
+
+    @PostMapping
+    public Vuelo createVuelo(@RequestBody Vuelo vuelo) {
+        return vueloService.create(vuelo);
+    }
+
+
 }
 

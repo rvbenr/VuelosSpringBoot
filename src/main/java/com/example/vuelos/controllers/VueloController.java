@@ -51,7 +51,5 @@ public class VueloController {
     public Vuelo createVuelo(@RequestBody Vuelo vuelo) {
         return vueloService.create(vuelo);
     }
-
-
 }
 

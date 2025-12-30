@@ -81,8 +81,9 @@ public class VueloRepository {
     }
 
     // Guarda un nuevo vuelo
-    public void save(Vuelo vuelo) {
+    public Vuelo save(Vuelo vuelo) {
         vuelos.add(vuelo);
+        return vuelo;
     }
 
     // Elimina un vuelo por ID

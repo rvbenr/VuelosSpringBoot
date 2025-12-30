@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 // DTO de salida para exponer datos del vuelo
 public record VueloResponseDTO(
-        int id,
+        Integer id,
         String nombreVuelo,
         String empresa,
         String lugarSalida,

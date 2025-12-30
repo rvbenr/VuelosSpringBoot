@@ -10,6 +10,9 @@ import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
+
 
 // Servicio que contiene la lógica de negocio
 @Service
@@ -69,8 +72,12 @@ public class VueloService {
     public Vuelo update(int id, Vuelo vuelo) {
         Vuelo existing = vueloRepository.findById(id);
         if (existing == null) {
-            throw new RuntimeException("Vuelo no encontrado");
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND,
+                    "Vuelo no encontrado"
+            );
         }
+
 
         existing.setNombreVuelo(vuelo.getNombreVuelo());
         existing.setEmpresa(vuelo.getEmpresa());
@@ -90,11 +97,7 @@ public class VueloService {
                 || vuelo.getFechaSalida().isAfter(vuelo.getFechaLlegada())) {
             throw new IllegalArgumentException("Datos de vuelo inválidos");
         }
-
-        return vueloRepository.guardar(vuelo);
+        return vueloRepository.save(vuelo);
     }
-
-
-
 }
 

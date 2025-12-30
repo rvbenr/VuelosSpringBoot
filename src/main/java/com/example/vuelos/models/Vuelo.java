@@ -6,7 +6,7 @@ import java.time.LocalDate;
 public class Vuelo {
 
     // Identificador único del vuelo
-    private int id;
+    private Integer id;
 
     // Código o nombre del vuelo
     private String nombreVuelo;
@@ -30,7 +30,7 @@ public class Vuelo {
     public Vuelo() {}
 
     // Constructor completo
-    public Vuelo(int id, String nombreVuelo, String empresa,
+    public Vuelo(Integer id, String nombreVuelo, String empresa,
                  String lugarSalida, String lugarLlegada,
                  LocalDate fechaSalida, LocalDate fechaLlegada) {
         this.id = id;
@@ -43,25 +43,60 @@ public class Vuelo {
     }
 
     // Getters y setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public Integer getId() {
+        return id;
+    }
 
-    public String getNombreVuelo() { return nombreVuelo; }
-    public void setNombreVuelo(String nombreVuelo) { this.nombreVuelo = nombreVuelo; }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-    public String getEmpresa() { return empresa; }
-    public void setEmpresa(String empresa) { this.empresa = empresa; }
+    public String getNombreVuelo() {
+        return nombreVuelo;
+    }
 
-    public String getLugarSalida() { return lugarSalida; }
-    public void setLugarSalida(String lugarSalida) { this.lugarSalida = lugarSalida; }
+    public void setNombreVuelo(String nombreVuelo) {
+        this.nombreVuelo = nombreVuelo;
+    }
 
-    public String getLugarLlegada() { return lugarLlegada; }
-    public void setLugarLlegada(String lugarLlegada) { this.lugarLlegada = lugarLlegada; }
+    public String getEmpresa() {
+        return empresa;
+    }
 
-    public LocalDate getFechaSalida() { return fechaSalida; }
-    public void setFechaSalida(LocalDate fechaSalida) { this.fechaSalida = fechaSalida; }
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
+    }
 
-    public LocalDate getFechaLlegada() { return fechaLlegada; }
-    public void setFechaLlegada(LocalDate fechaLlegada) { this.fechaLlegada = fechaLlegada; }
+    public String getLugarSalida() {
+        return lugarSalida;
+    }
+
+    public void setLugarSalida(String lugarSalida) {
+        this.lugarSalida = lugarSalida;
+    }
+
+    public String getLugarLlegada() {
+        return lugarLlegada;
+    }
+
+    public void setLugarLlegada(String lugarLlegada) {
+        this.lugarLlegada = lugarLlegada;
+    }
+
+    public LocalDate getFechaSalida() {
+        return fechaSalida;
+    }
+
+    public void setFechaSalida(LocalDate fechaSalida) {
+        this.fechaSalida = fechaSalida;
+    }
+
+    public LocalDate getFechaLlegada() {
+        return fechaLlegada;
+    }
+
+    public void setFechaLlegada(LocalDate fechaLlegada) {
+        this.fechaLlegada = fechaLlegada;
+    }
 }
 

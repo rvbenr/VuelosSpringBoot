@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "051fa9ac-cbeb-4417-87a9-6d2bb75653db",
+		"name": "Vuelos API",
+		"description": "Colección para probar el CRUD de vuelos.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50756112",
+		"_collection_link": "https://rubenverderodriguez-6684811.postman.co/workspace/Rub%C3%A9n-Verde-Rodr%C3%ADguez's-Workspa~f6adbf2c-6907-4873-80e0-4e6d73e6f5e4/collection/50756112-051fa9ac-cbeb-4417-87a9-6d2bb75653db?action=share&source=collection_link&creator=50756112"
+	},
+	"item": [
+		{
+			"name": "Todos los vuelos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vuelos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vuelos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vuelo por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vuelos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vuelos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear vuelo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 11,\r\n    \"nombreVuelo\": \"H011-V\",\r\n    \"empresa\": \"Emirates\",\r\n    \"lugarSalida\": \"Madrid\",\r\n    \"lugarLlegada\": \"Dubai\",\r\n    \"fechaSalida\": \"2025-05-01\",\r\n    \"fechaLlegada\": \"2025-05-02\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vuelos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vuelos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar vuelo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vuelos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vuelos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vuelos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vuelos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
